@@ -1,12 +1,19 @@
 class Coche {
+    constructor(public color: string){
+    }
+
     protected honk():void{
         console.log('Broom Broom')
     }
+
 }
 
 
 class Auto extends Coche {
-    private drive(): void{
+    constructor(public wheel: number,color: string){
+        super(color);
+    }
+     private drive(): void{
     console.log('Vroom Vroom')
 }
 startDrivingProcess():void {
@@ -15,8 +22,9 @@ startDrivingProcess():void {
 }
 }
 
-const dasAuto = new Auto();
-dasAuto.startDrivingProcess()
+const dasAuto = new Auto(4,'orange');
+dasAuto.startDrivingProcess();
+console.log(dasAuto.color)
 
 
 //public -> This method can be called any where, any time
